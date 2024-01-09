@@ -77,5 +77,5 @@ updateTopDisplay();
 
 function updateTopDisplay() {
   // Select or create the DOM element that will display the top times
-  // iterate over recordedTimes and update the element acordingly.
+  // iterate over recordedTimes and update the element acordingly
 }
