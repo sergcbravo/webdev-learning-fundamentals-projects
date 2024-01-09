@@ -28,19 +28,29 @@ A step by step series of examples that tell you how to get a development environ
 #### On Windows & macOS:
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone https://github.com/sergcbravo/webdev-learning-fundamentals-projects.git
+   ```
 
 
-   1. Navigate to the project directory:
+   1. Navigate to the project directory (replace <project-name> with the actual project directory):
+   ```
    cd webdev-learning-fundamentals-projects/<project-name>
+   ```
+
 2. Open the index.html file in your web browser to run the project.
 
   On Linux:
  1. Clone the repository: 
+ ```bash
  git clone https://github.com/sergcbravo/webdev-learning-fundamentals-projects.git
+ ```
+
 2. Navigate to the project directory:
+```
   cd webdev-learning-fundamentals-projects/<project-name>
+  ```
+
 3. Open the index.html file in a web browser to view the project. 
 !!!- Replace <project-name> with the actual name of the project folder you want to run.
 
