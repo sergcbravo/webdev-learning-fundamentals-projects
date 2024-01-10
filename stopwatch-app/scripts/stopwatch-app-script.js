@@ -1,6 +1,14 @@
 let timerInterval = null;
 let isRunning = false;
 let timeElapsed = 0;
+let recordedTimes = []; // This array will store all recorded times
+
+// Utility function for formatting time
+function formatTime(miliseconds) {
+  const minutes = Math.floor(miliseconds / 60000);
+  const seconds = Math.floor((miliseconds % 60000) / 1000);
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
 
 function startTimer() {
   if(!isRunning) {
@@ -43,8 +51,11 @@ resetButton.addEventListener('click', function() {
 });
 
 function stopTimer() {
+  if (isRunning) {
   clearInterval(timerInterval);
   isRunning = false;
+  recordTime(); // Record the time when the timer is stopped.
+  }
 }
 
 function resetTimer() {
@@ -54,13 +65,15 @@ function resetTimer() {
   startStopButton.textContent = 'Start'; // Update the button to 'Start'
 }
 
-let recordedTimes = []; // This array will store all recorded times
+
 
 function recordTime() {
+  console.log("recordTime called");
   if (isRunning) {
   stopTimer(); //First stop the timer
 // Then, record the current timeElapsed
 recordedTimes.push(timeElapsed);
+console.log("Times recorded:", recordedTimes);
 
 // Sort the times in ascending order (fastest to slowest)
 recordedTimes.sort((a, b) => a - b);
@@ -76,6 +89,18 @@ updateTopDisplay();
 }
 
 function updateTopDisplay() {
+  console.log("updateTopDisplay called");
   // Select or create the DOM element that will display the top times
   // iterate over recordedTimes and update the element acordingly
-}
+  let topTimesList = document.querySelector('.js-top-times ol');
+
+  // Clear the existing list items
+  topTimesList.innerHTML = '';
+  // Iterate over recordedTimes and create list items for each time.
+  for (let i = 0; i < recordedTimes.length; i++) {
+    const time = recordedTimes[i];
+    const li = document.createElement('li');
+    li.textContent = formatTime(time); // Use formatTime function to format the time nicely
+    topTimesList.appendChild(li);
+  }
+    }
