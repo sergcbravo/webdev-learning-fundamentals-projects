@@ -10,6 +10,16 @@ function formatTime(miliseconds) {
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+function loadTimes() {
+  const times = localStorage.getItem('recordedTimes');
+  return times ? JSON.parse(times) : [];
+}
+// Call loadTimes when the application loads.
+document.addEventListener('DOMContentLoaded', (Event) => {
+  recordedTimes = loadTimes();
+  updateTopDisplay(); // Update the display with loaded times.
+});
+
 function startTimer() {
   if(!isRunning) {
     isRunning = true;
@@ -33,8 +43,9 @@ function updateDisplay () {
 // Selecting the buttons from the DOM
 const startStopButton = document.querySelector('.js-start');
 const resetButton = document.querySelector('.js-reset');
-
-// Event listener for the Start/Stop button
+const clearButton = document.querySelector('.js-clear');
+clearButton.addEventListener('click', clearTimes); // Event listener for the Clear button
+// Event listener for the Start/Stop/clear button
 startStopButton.addEventListener('click', function() {
   if (!isRunning) {
     startTimer();
@@ -65,14 +76,14 @@ function resetTimer() {
   startStopButton.textContent = 'Start'; // Update the button to 'Start'
 }
 
-
+function saveTimes() {
+  localStorage.setItem('recordedTimes', JSON.stringify(recordedTimes));
+}
 
 function recordTime() {
-  console.log("recordTime called");
   stopTimer(); //First stop the timer
 // Then, record the current timeElapsed
 recordedTimes.push(timeElapsed);
-console.log("Times recorded:", recordedTimes);
 
 // Sort the times in ascending order (fastest to slowest)
 recordedTimes.sort((a, b) => a - b);
@@ -81,13 +92,13 @@ recordedTimes.sort((a, b) => a - b);
 if (recordedTimes.length > 5) {
   recordedTimes = recordedTimes.slice(0, 5);
 }
+  saveTimes(); //Save after updating array.
 
 // Now you can update the display of top times
-updateTopDisplay();
+  updateTopDisplay();
   }
 
 function updateTopDisplay() {
-  console.log("updateTopDisplay called");
   // Select or create the DOM element that will display the top times
   // iterate over recordedTimes and update the element acordingly
   let topTimesList = document.querySelector('.js-top-times ol');
@@ -101,4 +112,10 @@ function updateTopDisplay() {
     li.textContent = formatTime(time); // Use formatTime function to format the time nicely
     topTimesList.appendChild(li);
   }
+    }
+
+    function clearTimes() {
+      recordedTimes = []; //Clear the recordedTimes array.
+      saveTimes(); // Save the cleared array to localStorage.
+      updateTopDisplay(); // Update the display to show no times.
     }
