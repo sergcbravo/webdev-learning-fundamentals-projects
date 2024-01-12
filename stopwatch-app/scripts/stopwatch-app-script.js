@@ -69,7 +69,6 @@ function resetTimer() {
 
 function recordTime() {
   console.log("recordTime called");
-  if (isRunning) {
   stopTimer(); //First stop the timer
 // Then, record the current timeElapsed
 recordedTimes.push(timeElapsed);
@@ -86,7 +85,6 @@ if (recordedTimes.length > 5) {
 // Now you can update the display of top times
 updateTopDisplay();
   }
-}
 
 function updateTopDisplay() {
   console.log("updateTopDisplay called");
