@@ -60,8 +60,8 @@ A step by step series of examples that tell you how to get a development environ
 I believe in the power of community and shared knowledge. Here are some resources that have been instrumental in my learning journey:
 
 - [MDN Web Docs](https://developer.mozilla.org) - Comprehensive documentation on web standards.
-- [SuperSimpleDev](https://supersimpledev.com) - Simplified web development tutorials. ChatGPT has helped me imnmensly. It has helped me by guiding me in  learning how to problem solve and think my way through steps and think like a programmer. 
-- [ChatGPT-4](https://chat.openai.com) - Advanced AI for coding assistance.
+- [SuperSimpleDev](https://supersimpledev.com) - Simplified web development tutorials.  
+- [ChatGPT-4](https://chat.openai.com) - Advanced AI for coding assistance. ChatGPT has helped me imnmensly. It has helped me by guiding me in  learning how to problem solve and think my way through steps and think like a programmer.
 
 Support
 Give a ⭐️ if this project helped you!
