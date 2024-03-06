@@ -69,8 +69,8 @@ Give a ⭐️ if this project helped you!
 Author
 Sergio C Bravo
 
-   - [My X account ](https://twitter.com/Sergatx))
-   - [Dev.to] (https://dev.to/sergcbravo)
+   - [My X account ](https://twitter.com/Sergatx)
+   - [Dev.to](https://dev.to/sergcbravo)
    
 
 ## License
