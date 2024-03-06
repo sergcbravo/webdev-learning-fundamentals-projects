@@ -69,9 +69,9 @@ Give a ⭐️ if this project helped you!
 Author
 Sergio C Bravo
 
-- GitHub: [@sergcbravo]
-- X: [@Sergatx][https://twitter.com/Sergatx]
-- Email: [sergiocbravo1@gmail.com](mailto:sergiocbravo1@gmail.com)
+   [My X account ](https://twitter.com/Sergatx))
+   [Dev.to] (https://dev.to/sergcbravo)
+   
 
 ## License
 
